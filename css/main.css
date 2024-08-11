@@ -1,8 +1,22 @@
-.userboxPc {
-    width: 500px;
-    height: 500px;
-    font-size: 15pt;
-    border: 2px solid black;
-    margin: 10px;
-    background-color: lightgray;
+@media screen and (min-width:1000px) {
+    .userboxPc {
+        width: 500px;
+        height: 500px;
+        font-size: 15pt;
+        border: 2px solid black;
+        margin: 10px;
+        background-color: lightgray;
+    }
+}
+
+@media  screen and (max-width:999px) {
+    .userboxPc {
+        width: 300px;
+        height: 300px;
+        font-size: 10pt;
+        border: 2px solid black;
+        margin: 10px;
+        background-color: lightgray;
+    }
+    
 }
