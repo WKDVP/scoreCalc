@@ -12,8 +12,9 @@
                 document.getElementById('seedMoney').style.display = 'none';
                 let m1 = document.getElementsByName('smi');
                 let m2 = document.getElementsByName('smi');
-                document.getElementById('player1').style.visibility = 'visible';
-                document.getElementById('player2').style.visibility = 'visible';
+                //document.getElementById('player1').style.visibility = 'visible';
+                //document.getElementById('player2').style.visibility = 'visible';
+                //document.getElementById('div-container').style.visibility = 'visible';
                 document.getElementById('resultMoney').style.display = 'block';
                 document.getElementById('p1m').innerHTML = m1[0].value;
                 document.getElementById('p2m').innerHTML = m2[0].value;
@@ -46,38 +47,49 @@
                 }
                 document.getElementById('p1m').innerHTML = m1;
                 document.getElementById('p2m').innerHTML = m2;
+                if (m1 <= 0 || m2 <= 0) {
+                    alert('게임이 종료되었습니다.');
+                }
             }
-            if(m1 <= 0 || m2 <= 0){
-                alert('게임이 종료되었습니다.');
-            }
+
 
         }
     </script>
 </head>
 
-<h1>2 Players</h1>
-<div id='player1' style="visibility: hidden; float: left" class="userboxPc">
-    <p style="margin: 10px;">소지금: </p>
-    <p id="p1m"> </p>
-    <input type="radio" name="rb" id="p1w"> <label for="p1w">승리</label>
-    <br>
-    <p>로그</p>
-    <p id="p1l"> </p>
-</div>
+<body>
+    <div class="topBar">
+        <p><a href="./index.html">Score Calc</a> / 2 Players</p>
+    </div>
+    <div class="sideBar">
+        <br>
+        <div id="seedMoney" style="display: block;">
+            <p>시작금: <input name='smi' type="text"> <button onclick="setSeedmoney()">완료</button></p>
+        </div>
 
-<div id='player2' style="visibility: hidden; float: left;" class="userboxPc">
-    <p style="margin: 10px;">소지금: </p>
-    <p id="p2m"> </p>
-    <input type="radio" name="rb" id="p2w"> <label for="p2w">승리</label>
-    <br>
-    <p>로그</p>
-    <p id="p2l"> </p>
-</div>
+        <div id="resultMoney" style="display: none;">
+            <p>판돈: <input name="betMoney" type="text"> <button onclick="gameEnd()">완료</button> </p>
+        </div>
+    </div>
+    <div id="div-container" class="container">
 
-<div id="seedMoney" style="display: block; float: none;">
-    시작금: <input name='smi' type="text"> <button onclick="setSeedmoney()">완료</button>
-</div>
+        <div id='player1' class="userboxPc">
+            <p>소지금: <span id="p1m"> </span></p>
+            <input type="radio" name="rb" id="p1w"> <label for="p1w">승리</label>
+            <br>
+            <p>로그</p>
+            <p id="p1l"> </p>
+        </div>
 
-<div id="resultMoney" style="display: none;">
-    <p>판돈: </p> <input name="betMoney" type="text"> <button onclick="gameEnd()">완료</button>
-</div>
+        <div id='player2' class="userboxPc">
+            <p>소지금: <span id="p2m"> </span></p>
+            <input type="radio" name="rb" id="p2w"> <label for="p2w">승리</label>
+            <br>
+            <p>로그</p>
+            <p id="p2l"> </p>
+        </div>
+
+    </div>
+
+
+</body>
