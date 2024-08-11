@@ -1,0 +1,8 @@
+.userboxPc {
+    width: 500px;
+    height: 500px;
+    font-size: 15pt;
+    border: 2px solid black;
+    margin: 10px;
+    background-color: lightgray;
+}
