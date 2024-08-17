@@ -1,18 +1,139 @@
 <!DOCTYPE html>
+
 <head>
-    <title>Score Bord</title>
+    <title>Score Calc</title>
     <link href="./css/main.css" rel="stylesheet">
+    <script>
+        function setSeedmoney() {
+            if (isNaN(parseInt(document.getElementsByName('smi')[0].value))) {
+                alert('시작금을 올바르게 입력해주세요');
+                document.getElementsByName('smi').value = null;
+            }
+            else {
+                document.getElementById('seedMoney').style.display = 'none';
+                let m1 = document.getElementsByName('smi');
+                let m2 = document.getElementsByName('smi');
+                let m3 = document.getElementsByName('smi');
+                //document.getElementById('player1').style.visibility = 'visible';
+                //document.getElementById('player2').style.visibility = 'visible';
+                //document.getElementById('div-container').style.visibility = 'visible';
+                document.getElementById('resultMoney').style.display = 'block';
+                document.getElementById('p1m').innerHTML = m1[0].value;
+                document.getElementById('p2m').innerHTML = m2[0].value;
+                document.getElementById('p3m').innerHTML = m3[0].value;
+            }
+            document.getElementsByName('smi')[0].value = null;
+        }
+
+        function gameEnd() {
+            if (isNaN(parseInt(document.getElementsByName('betMoney')[0].value))) {
+                alert('판돈을 올바르게 입력해주세요');
+            }
+            else {
+                let m1 = parseInt(document.getElementById('p1m').innerHTML);
+                let m2 = parseInt(document.getElementById('p2m').innerHTML);
+                let m3 = parseInt(document.getElementById('p3m').innerHTML);
+                if (document.getElementById('p1w').checked) {
+                    m1 += parseInt(document.getElementsByName('betMoney')[0].value);
+                    m2 -= parseInt(document.getElementsByName('betMoney')[0].value);
+                    m3 -= parseInt(document.getElementsByName('betMoney')[0].value);
+                    document.getElementById('p1l').innerHTML += '+' + document.getElementsByName('betMoney')[0].value + '<br>';
+                    document.getElementById('p2l').innerHTML += '-' + document.getElementsByName('betMoney')[0].value + '<br>';
+                    document.getElementById('p3l').innerHTML += '-' + document.getElementsByName('betMoney')[0].value + '<br>';
+
+                }
+                else if (document.getElementById('p2w').checked) {
+                    m2 += parseInt(document.getElementsByName('betMoney')[0].value);
+                    m1 -= parseInt(document.getElementsByName('betMoney')[0].value);
+                    m3 -= parseInt(document.getElementsByName('betMoney')[0].value);
+                    document.getElementById('p1l').innerHTML += '-' + document.getElementsByName('betMoney')[0].value + '<br>';
+                    document.getElementById('p2l').innerHTML += '+' + document.getElementsByName('betMoney')[0].value + '<br>';
+                    document.getElementById('p3l').innerHTML += '-' + document.getElementsByName('betMoney')[0].value + '<br>';
+                }
+                else if (document.getElementById('p3w').checked) {
+                    m1 -= parseInt(document.getElementsByName('betMoney')[0].value);
+                    m2 -= parseInt(document.getElementsByName('betMoney')[0].value);
+                    m3 += parseInt(document.getElementsByName('betMoney')[0].value);
+                    document.getElementById('p1l').innerHTML += '-' + document.getElementsByName('betMoney')[0].value + '<br>';
+                    document.getElementById('p2l').innerHTML += '-' + document.getElementsByName('betMoney')[0].value + '<br>';
+                    document.getElementById('p3l').innerHTML += '+' + document.getElementsByName('betMoney')[0].value + '<br>';
+                }
+                else {
+                    alert('승리자를 선택해주세요');
+                    return;
+                }
+                document.getElementById('p1m').innerHTML = m1;
+                document.getElementById('p2m').innerHTML = m2;
+                document.getElementById('p3m').innerHTML = m3;
+                document.getElementsByName('betMoney')[0].value = null;
+                if (m1 <= 0 || m2 <= 0 || m3 <= 0) {
+                    alert('게임이 종료되었습니다.');
+                    document.getElementById('restart').style.display = 'block';
+                    document.getElementById('resultMoney').style.display = 'none';
+                }
+            }
+        }
+
+        function restart() {
+            document.getElementById('seedMoney').style.display = 'block';
+            document.getElementById('restart').style.display = 'none';
+            document.getElementById('p1m').innerHTML = 0;
+            document.getElementById('p2m').innerHTML = 0;
+            document.getElementById('p3m').innerHTML = 0;
+            document.getElementById('p1l').innerHTML = '';
+            document.getElementById('p2l').innerHTML = '';
+            document.getElementById('p3l').innerHTML = '';
+            document.getElementById('p1w').checked = false;
+            document.getElementById('p2w').checked = false;
+            document.getElementById('p3w').checked = false;
+        }  
+    </script>
 </head>
 
 <body>
     <div class="topBar">
         <p><a href="./index.html">Score Calc</a> / 3 Players</p>
     </div>
-    <div class = "sideBar">
-        <ul>
-            <li><a href="./index.html">Back to main page</a></li>
-            
-        </ul>
+    <div class="sideBar">
+        <br>
+        <div id="seedMoney" style="display: block;">
+            <p>시작금: <input name='smi' type="text"> <button onclick="setSeedmoney()">완료</button></p>
+        </div>
+
+        <div id="resultMoney" style="display: none;">
+            <p>판돈: <input name="betMoney" type="text"> <button onclick="gameEnd()">완료</button> </p>
+        </div>
+        <div id="restart" style="display: none;">
+            <p><button onclick="restart()">다시시작</button></p>
+        </div>
     </div>
-    <h1> Sorry, it's under development</h1>
+    <div id="div-container" class="container">
+
+        <div id='player1' class="userboxThree">
+            <p>소지금: <span id="p1m"> </span></p>
+            <input type="radio" name="rb" id="p1w"> <label for="p1w">승리</label>
+            <br>
+            <p>로그</p>
+            <p id="p1l"> </p>
+        </div>
+
+        <div id='player2' class="userboxThree">
+            <p>소지금: <span id="p2m"> </span></p>
+            <input type="radio" name="rb" id="p2w"> <label for="p2w">승리</label>
+            <br>
+            <p>로그</p>
+            <p id="p2l"> </p>
+        </div>
+
+        <div id='player3' class="userboxThree">
+            <p>소지금: <span id="p3m"> </span></p>
+            <input type="radio" name="rb" id="p3w"> <label for="p3w">승리</label>
+            <br>
+            <p>로그</p>
+            <p id="p3l"> </p>
+        </div>
+
+    </div>
+
+
 </body>
