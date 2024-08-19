@@ -6,6 +6,7 @@
     <script src="./js/restart.js"></script>
     <script src="./js/setSeedmoney.js"></script>
     <script src="./js/gameEnd.js"></script>
+    <script src="./js/undo.js"></script>
 </head>
 
 <body>
@@ -15,11 +16,14 @@
     <div class="sideBar">
         <br>
         <div id="seedMoney" style="display: block;">
-            <p>시작금: <input name='smi' type="text"> <button onclick="setSeedmoney(true)">완료</button></p>
+            <p>시작금: <input name='smi' type="number"> <button onclick="setSeedmoney(true)">완료</button></p>
         </div>
 
         <div id="resultMoney" style="display: none;">
-            <p>판돈: <input name="betMoney" type="text"> <button onclick="gameEnd(true)">완료</button> </p>
+            <p>판돈: <input name="betMoney" type="number"> <button onclick="gameEnd(true)">완료</button> </p>
+        </div>
+        <div id = 'undo' style="display: block;">
+            <p><button onclick="undo(true)">되돌리기</button></p>
         </div>
         <div id="restart" style="display: none;">
             <p><button onclick="restart(true)">다시시작</button></p>
