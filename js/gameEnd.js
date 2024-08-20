@@ -47,6 +47,7 @@ function gameEnd(isThree = false) {
             }
         }
     }
+    // 2players
     else
     {
         if (isNaN(parseInt(document.getElementsByName('betMoney')[0].value))) {

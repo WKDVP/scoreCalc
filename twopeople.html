@@ -8,6 +8,7 @@
     <script src="./js/setSeedmoney.js"></script>
     <script src="./js/gameEnd.js"></script>
     <script src="./js/undo.js"></script>
+    <script src="./js/changName.js"></script>
 </head>
 
 <body>
@@ -19,38 +20,45 @@
         <div id="seedMoney" style="display: block;">
             <p>시작금: <input name='smi' type="number"> <button onclick="setSeedmoney()">완료</button></p>
         </div>
-
         <div id="resultMoney" style="display: none;">
             <p>판돈: <input name="betMoney" type="number"> <button onclick="gameEnd()">완료</button> </p>
         </div>
-        <div id = 'undo' style="display: block;">
+        <div id='undo' style="display: block;">
             <p><button onclick="undo()">되돌리기</button></p>
         </div>
         <div id="restart" style="display: none;">
             <p><button onclick="restart()">다시시작</button></p>
         </div>
     </div>
-    <div id="div-container" class="container">
+    <div id="player-container" class="container">
 
         <div id='player1' class="userboxTwo">
+            <div>
+                <span id="p1-name" onclick="changeName('p1-name')">Player 1</span>
+                <div name="win-checker" style="float: right; margin-right: 5px;">
+                    <input type="radio" name="rb" id="p1w"> <label for="p1w">승리</label>
+                </div>
+            </div>
             <p>소지금: <span id="p1m"> </span></p>
-            <input type="radio" name="rb" id="p1w"> <label for="p1w">승리</label>
-            <br>
             <div id='log' class="logbox">
-            <p>로그</p>
-            <br>
-            <p id="p1l"> </p>
+                <p>로그</p>
+                <br>
+                <p id="p1l"> </p>
             </div>
         </div>
 
         <div id='player2' class="userboxTwo">
+            <div>
+                <span id="p2-name" onclick="changeName('p2-name')">Player 2</span>
+                <div name="win-checker" style="float: right; margin-right: 5px;">
+                    <input type="radio" name="rb" id="p2w"> <label for="p2w">승리</label>
+                </div>
+            </div>
             <p>소지금: <span id="p2m"> </span></p>
-            <input type="radio" name="rb" id="p2w"> <label for="p2w">승리</label>
-            <br>
             <div id='log' class="logbox">
                 <p>로그</p>
                 <p id="p2l"> </p>
-                </div>
+            </div>
         </div>
 
     </div>

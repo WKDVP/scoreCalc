@@ -23,43 +23,58 @@
         <div id="resultMoney" style="display: none;">
             <p>판돈: <input name="betMoney" type="number"> <button onclick="gameEnd(true)">완료</button> </p>
         </div>
-        <div id = 'undo' style="display: block;">
+        <div id = 'undo'>
             <p><button onclick="undo(true)">되돌리기</button></p>
         </div>
         <div id="restart" style="display: none;">
             <p><button onclick="restart(true)">다시시작</button></p>
         </div>
     </div>
-    <div id="div-container" class="container">
+    <div id="player-container" class="container">
 
         <div id='player1' class="userboxThree">
+            <div>
+                <span id="p1-name" onclick="changeName('p1-name')">Player 1</span>
+                <div name="win-checker" style="float: right; margin-right: 5px;">
+                    <input type="radio" name="rb" id="p1w"> <label for="p1w">승리</label>
+                </div>
+            </div>
             <p>소지금: <span id="p1m"> </span></p>
-            <input type="radio" name="rb" id="p1w"> <label for="p1w">승리</label>
-            <br>
             <div id='log' class="logbox">
                 <p>로그</p>
+                <br>
                 <p id="p1l"> </p>
-                </div>
+            </div>
         </div>
 
         <div id='player2' class="userboxThree">
+            <div>
+                <span id="p2-name" onclick="changeName('p2-name')">Player 2</span>
+                <div name="win-checker" style="float: right; margin-right: 5px;">
+                    <input type="radio" name="rb" id="p2w"> <label for="p2w">승리</label>
+                </div>
+            </div>
             <p>소지금: <span id="p2m"> </span></p>
-            <input type="radio" name="rb" id="p2w"> <label for="p2w">승리</label>
-            <br>
             <div id='log' class="logbox">
                 <p>로그</p>
+                <br>
                 <p id="p2l"> </p>
-                </div>
+            </div>
         </div>
 
         <div id='player3' class="userboxThree">
+            <div>
+                <span id="p3-name" onclick="changeName('p3-name')">Player 3</span>
+                <div name="win-checker" style="float: right; margin-right: 5px;">
+                    <input type="radio" name="rb" id="p3w"> <label for="p3w">승리</label>
+                </div>
+            </div>
             <p>소지금: <span id="p3m"> </span></p>
-            <input type="radio" name="rb" id="p3w"> <label for="p3w">승리</label>
-            <br>
             <div id='log' class="logbox">
                 <p>로그</p>
+                <br>
                 <p id="p3l"> </p>
-                </div>
+            </div>
         </div>
 
     </div>
