@@ -1,4 +1,4 @@
-@media screen and (min-width:1000px) {
+@media screen and (min-width:900px) {
     .body {
         margin: 0;
         padding: 0;
@@ -17,7 +17,26 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        text-align: center;
+    }
+    
+    .sideBar a {
+        text-decoration-line: none;
+        color: white;
+    }
+
+    .sideBar input {
+        width: 70%;
+        margin: 0;
+        margin-left: 3px;
+        display: inline-flex;
+    }
+
+    .sideBar button {
+        text-align: center;
+        width: 20%;
+        margin: 0; 
+        margin-right: 3px;
     }
 
     .sideBar ul {
@@ -25,10 +44,6 @@
         padding: 0;
     }
 
-    .sideBar a {
-        text-decoration-line: none;
-        color: white;
-    }
 
     .sideBar li {
         margin: 20px 0;
@@ -100,5 +115,11 @@
     .topBar a {
         text-decoration-line: none;
         color: white;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    .sideBar{
+        display: none;
     }
 }

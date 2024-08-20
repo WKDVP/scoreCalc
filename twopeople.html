@@ -15,19 +15,22 @@
     <div class="topBar">
         <p><a href="./index.html">Score Calc</a> / 2 Players</p>
     </div>
+
     <div class="sideBar">
         <br>
-        <div id="seedMoney" style="display: block;">
-            <p>시작금: <input name='smi' type="number"> <button onclick="setSeedmoney()">완료</button></p>
+        <div id="seedMoney" style="width: 100%; display: block;">
+            <p style="text-align: left; margin-bottom: 0; margin-left: 2px;">시작금:</p>
+            <input name='smi' type="number"> <button onclick="setSeedmoney()">완료</button>
         </div>
         <div id="resultMoney" style="display: none;">
-            <p>판돈: <input name="betMoney" type="number"> <button onclick="gameEnd()">완료</button> </p>
+            <p style="text-align: left; margin-bottom: 0; margin-left: 2px;">판돈:</p>
+            <input name="betMoney" type="number"> <button onclick="gameEnd()">완료</button>
         </div>
-        <div id='undo' style="display: block;">
-            <p><button onclick="undo()">되돌리기</button></p>
+        <div id='undo' style="display: block; width: 100%;">
+            <p><button onclick="undo()" style="width: 50%; aspect-ratio: 12/5;">되돌리기</button></p>
         </div>
-        <div id="restart" style="display: none;">
-            <p><button onclick="restart()">다시시작</button></p>
+        <div id="restart" style="display: none;  width: 100%;">
+            <p><button onclick="restart()" style="width: 50%; aspect-ratio: 12/5;">다시시작</button></p>
         </div>
     </div>
     <div id="player-container" class="container">
