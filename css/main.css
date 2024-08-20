@@ -103,3 +103,9 @@
         color: white;
     }
 }
+
+@media screen and (max-width: 999px) {
+    .sideBar{
+        display: none;
+    }
+}
