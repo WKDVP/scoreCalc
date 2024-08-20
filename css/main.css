@@ -35,7 +35,7 @@
     }
 
     .container {
-        width: 85vw;
+        width: 82vw;
         height: 87vh;
         margin: 0;
         display: flex;
@@ -69,7 +69,6 @@
         margin-top:5%;
     }
 
-
     .userboxThree {
         width: 33%;
         height: 98%;
@@ -83,7 +82,7 @@
     }
 
     .topBar {
-        width: 100vw;
+        width: 97vw;
         height: 13vh;
         align-items: center;
         display: flex;
