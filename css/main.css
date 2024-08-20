@@ -35,7 +35,7 @@
     }
 
     .container {
-        width: 82vw;
+        width: 85vw;
         height: 87vh;
         margin: 0;
         display: flex;
@@ -83,7 +83,7 @@
     }
 
     .topBar {
-        width: 97vw;
+        width: 100vw;
         height: 13vh;
         align-items: center;
         display: flex;
